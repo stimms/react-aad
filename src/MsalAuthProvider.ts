@@ -51,7 +51,7 @@ export abstract class MsalAuthProvider implements IAuthProvider {
       {
         cacheLocation: authProviderConfig.persistLoginPastSession ? StorageLocations.localStorage : StorageLocations.sessionStorage,
         redirectUri: authProviderConfig.redirectUri,
-        validateAuthority: authProviderConfig.validateAuthority == undefined ? true : authProviderConfig.validateAuthority
+        validateAuthority: authProviderConfig.validateAuthority === undefined ? true : authProviderConfig.validateAuthority
       }
     );
   }

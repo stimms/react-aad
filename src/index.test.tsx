@@ -50,7 +50,7 @@ it('renders without crashing', () => {
 
 it('updates the userInfo state', () => {
 
-  let userInfo : IUserInfo = null;
+  let userInfo: IUserInfo = null;
   const unauthenticatedFunction = (login: any) => {
     return <div><h1> unauthenticatedFunction </h1> </div>
   }
@@ -70,6 +70,7 @@ it('updates the userInfo state', () => {
         clientID: '<random-guid>',
         scopes: ['openid'],
         type: LoginType.Popup,
+        validateAuthority: true,
       })}
       unauthenticatedFunction={unauthenticatedFunction}
       authenticatedFunction={authenticatedFunction}
@@ -85,7 +86,7 @@ it('updates the userInfo state', () => {
     userIdentifier: "Something"
   }
 
-  const loggedInUser : IUserInfo = {
+  const loggedInUser: IUserInfo = {
     jwtAccessToken: "accesstoken",
     jwtIdToken: "idtoken",
     user: testUser,
@@ -135,7 +136,7 @@ it('logs out the user', () => {
     userIdentifier: "Something"
   }
 
-  const loggedInUser : IUserInfo = {
+  const loggedInUser: IUserInfo = {
     jwtAccessToken: "accesstoken",
     jwtIdToken: "idtoken",
     user: testUser,
